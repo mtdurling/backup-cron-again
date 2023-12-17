@@ -44,7 +44,7 @@ const dumpToFile = async (path: string) => {
         return;
       }
 
-      if (stderr != "") {
+      if (stderr != "" && !stderr.includes("there are circular foreign-key")) {
         reject({ stderr: stderr.trimEnd() });
         return;
       }
